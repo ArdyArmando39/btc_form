@@ -1,0 +1,29 @@
+-- Table: evalys.page7
+
+-- DROP TABLE evalys.page7;
+
+CREATE TABLE evalys.page7
+(
+  evaluation character varying(30),
+  lead_unit character varying(30),
+  lead_no character varying(30),
+  lead_min character varying(30),
+  lead_max character varying(30),
+  lead_results1 character varying(30),
+  lead_results2 character varying(30),
+  lead_status character varying(30),
+  cummulative_unit character varying(30),
+  cummulative_no character varying(30),
+  cummulative_min character varying(30),
+  cummulative_max character varying(30),
+  cummulative_results character varying(30),
+  cummulative_status character varying(30),
+  CONSTRAINT page7_evaluation_fkey FOREIGN KEY (evaluation)
+      REFERENCES evalys.page1 (evaluation) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE evalys.page7
+  OWNER TO postgres;

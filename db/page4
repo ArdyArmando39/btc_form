@@ -1,0 +1,27 @@
+-- Table: evalys.page4
+
+-- DROP TABLE evalys.page4;
+
+CREATE TABLE evalys.page4
+(
+  evaluation character varying(30),
+  a1_unit character varying(5),
+  a1_no character varying(30),
+  a1_min character varying(30),
+  a1_results character varying(30),
+  a1_status character varying(10),
+  runout_unit character varying(5),
+  runout_no character varying(30),
+  runout_min character varying(30),
+  runout_max character varying(30),
+  runout_results character varying(30),
+  runout_status character varying(10),
+  CONSTRAINT fk_eval FOREIGN KEY (evaluation)
+      REFERENCES evalys.page1 (evaluation) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE evalys.page4
+  OWNER TO postgres;

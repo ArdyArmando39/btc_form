@@ -1,0 +1,23 @@
+-- Table: evalys.page1
+
+-- DROP TABLE evalys.page1;
+
+CREATE TABLE evalys.page1
+(
+  report_number character varying(20) NOT NULL,
+  evaluation character varying(40) NOT NULL,
+  name_nik character varying(180) NOT NULL,
+  date date,
+  connection character varying(40),
+  od_size double precision,
+  masses double precision,
+  grade character varying(40),
+  pipe character varying(40),
+  wo_number character varying(40),
+  CONSTRAINT "PK_EvalID" PRIMARY KEY (evaluation)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE evalys.page1
+  OWNER TO postgres;

@@ -1,0 +1,29 @@
+-- Table: evalys.page8
+
+-- DROP TABLE evalys.page8;
+
+CREATE TABLE evalys.page8
+(
+  evaluation character varying(30),
+  diameter_unit character varying(30),
+  diameter_no character varying(30),
+  diameter_min character varying(30),
+  diameter_max character varying(30),
+  diameter_minresults character varying(30),
+  diameter_maxresults character varying(30),
+  diameter_average character varying(30),
+  diameter_status character varying(30),
+  ovality_unit character varying(30),
+  ovality_no character varying(30),
+  ovality_max character varying(30),
+  ovality_results character varying(30),
+  ovality_status character varying(30),
+  CONSTRAINT page9_evaluation_fkey FOREIGN KEY (evaluation)
+      REFERENCES evalys.page1 (evaluation) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE evalys.page8
+  OWNER TO postgres;
